@@ -7,10 +7,10 @@
 
 <style>
 :root {
-  --primary: #0d6efd;
-  --secondary: #6f42c1;
+  --primary: #2563eb;
+  --secondary: #7c3aed;
   --light: #f8f9fa;
-  --radius: 18px;
+  --radius: 20px;
 }
 
 * { box-sizing: border-box; }
@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', system-ui, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(120deg, #141e30, #243b55);
+  background: radial-gradient(circle at top, #243b55, #0f172a);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 24px;
 }
 
 /* CARD */
@@ -41,7 +41,7 @@ body {
   width: 100%;
   max-width: 560px;
   border-radius: var(--radius);
-  box-shadow: 0 25px 55px rgba(0,0,0,0.35);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -52,7 +52,7 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   text-align: center;
-  padding: 32px 20px;
+  padding: 36px 20px 42px;
 }
 
 .header img {
@@ -61,71 +61,77 @@ body {
 }
 
 .header h1 {
-  margin: 6px 0 4px;
-  font-size: 26px;
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 1px;
 }
 
 .header p {
-  margin: 0;
+  margin-top: 6px;
   font-size: 14px;
   opacity: 0.9;
 }
 
 /* CONTENT */
 .content {
-  padding: 26px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 32px 28px 36px;
 }
 
 /* ICON GRID */
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
+/* ICON CARD */
 .icon-btn {
-  background: var(--light);
-  border-radius: 16px;
-  padding: 20px 10px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 14px;
   text-align: center;
   text-decoration: none;
-  color: #212529;
+  color: #1f2937;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s ease;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
 }
 
 .icon-btn img {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 8px;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 10px;
 }
 
 .icon-btn span {
   display: block;
 }
 
+/* HOVER */
 .icon-btn:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.25);
+}
+
+/* BACK BUTTON */
+.back {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
 }
 
 /* FOOTER */
 .footer {
+  background: #f3f4f6;
   text-align: center;
   padding: 14px;
   font-size: 12px;
-  color: #777;
-  background: #f1f3f5;
+  color: #6b7280;
 }
 
-/* MOBILE */
-@media (max-width: 520px) {
+/* RESPONSIVE */
+@media (max-width: 700px) {
   .icon-grid {
     grid-template-columns: 1fr;
   }
@@ -148,39 +154,32 @@ body {
     <!-- CONTENT -->
     <div class="content">
 
-      <!-- ICON GRID -->
+      <!-- SOCIAL ICON GRID -->
       <div class="icon-grid">
 
-        <a href="INSTAGRAM_MAIN_LINK" target="_blank" class="icon-btn">
-          <img src="icons/social.svg" alt="Instagram">
+        <a href="INSTAGRAM_LINK" target="_blank" class="icon-btn">
+          <img src="icons/instagram.svg" alt="Instagram">
           <span>Instagram</span>
         </a>
 
-        <a href="INSTAGRAM_CCTV_LINK" target="_blank" class="icon-btn">
-          <img src="icons/social.svg" alt="Instagram CCTV">
-          <span>Instagram CCTV</span>
-        </a>
-
-        <a href="FACEBOOK_MAIN_LINK" target="_blank" class="icon-btn">
-          <img src="icons/social.svg" alt="Facebook">
+        <a href="FACEBOOK_LINK" target="_blank" class="icon-btn">
+          <img src="icons/facebook.svg" alt="Facebook">
           <span>Facebook</span>
         </a>
 
-        <a href="FACEBOOK_CCTV_LINK" target="_blank" class="icon-btn">
-          <img src="icons/social.svg" alt="Facebook CCTV">
-          <span>Facebook CCTV</span>
-        </a>
-
         <a href="YOUTUBE_LINK" target="_blank" class="icon-btn">
-          <img src="icons/social.svg" alt="YouTube">
+          <img src="icons/youtube.svg" alt="YouTube">
           <span>YouTube</span>
         </a>
 
-        <a href="index.html" class="icon-btn">
-          <img src="icons/website.svg" alt="Back">
-          <span>Back</span>
-        </a>
+      </div>
 
+      <!-- BACK -->
+      <div class="back">
+        <a href="index.html" class="icon-btn" style="max-width:200px;">
+          <img src="icons/website.svg" alt="Back">
+          <span>Back to Home</span>
+        </a>
       </div>
 
     </div>
