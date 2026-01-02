@@ -2,122 +2,178 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AMEEGO | Digital Connect</title>
+<title>AMEEGO | Smart Security Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
+:root {
+  --primary: #0d6efd;
+  --secondary: #6f42c1;
+  --dark: #1c1f26;
+  --light: #f8f9fa;
+  --success: #25D366;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(120deg, #141e30, #243b55);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
 }
 
-.card {
+/* MAIN CONTAINER */
+.wrapper {
   background: #ffffff;
-  width: 92%;
-  max-width: 420px;
-  border-radius: 18px;
-  padding: 25px 20px;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 460px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
 }
 
-.logo {
-  width: 130px;
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #0d6efd, #6f42c1);
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.header img {
+  width: 110px;
   margin-bottom: 10px;
 }
 
-h1 {
-  margin: 10px 0 5px;
-  font-size: 26px;
+.header h1 {
+  margin: 6px 0 4px;
+  font-size: 28px;
   letter-spacing: 1px;
 }
 
-.tagline {
-  color: #555;
+.header p {
+  margin: 0;
   font-size: 14px;
-  margin-bottom: 20px;
+  opacity: 0.9;
 }
 
-.button {
+/* CONTENT */
+.content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* BUTTONS */
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 14px;
-  margin: 12px 0;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 12px;
   text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
 }
 
-.button:hover {
+.btn i {
+  font-size: 18px;
+}
+
+.btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.website { background: #007bff; }
-.cctv { background: #6f42c1; }
-.catalogue { background: #343a40; }
-.contact { background: #17a2b8; }
-.whatsapp { background: #25D366; }
-.social { background: #e83e8c; }
+/* BUTTON COLORS */
+.btn-website { background: var(--primary); }
+.btn-cctv { background: var(--secondary); }
+.btn-catalogue { background: #343a40; }
+.btn-contact { background: #17a2b8; }
+.btn-whatsapp { background: var(--success); }
+.btn-social { background: #e83e8c; }
 
+/* FOOTER */
 .footer {
-  margin-top: 18px;
+  text-align: center;
+  padding: 14px;
   font-size: 12px;
   color: #777;
+  background: #f1f3f5;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .wrapper {
+    max-width: 520px;
+  }
+
+  .btn {
+    font-size: 17px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="wrapper">
 
-  <!-- LOGO -->
-  <img src="logo.jpg" alt="AMEEGO Logo" class="logo">
+  <!-- HEADER -->
+  <div class="header">
+    <img src="logo.png" alt="AMEEGO Logo">
+    <h1>AMEEGO</h1>
+    <p>Complete CCTV & Security Solutions</p>
+  </div>
 
-  <h1>AMEEGO</h1>
-  <div class="tagline">Complete CCTV & Security Solutions</div>
+  <!-- CONTENT -->
+  <div class="content">
 
-  <!-- BUTTONS -->
-  <a class="button website" href="https://www.ameego.in" target="_blank">
-    <i class="fas fa-globe"></i> Visit Website
-  </a>
+    <a href="https://www.ameego.in" target="_blank" class="btn btn-website">
+      <i class="fas fa-globe"></i> Visit Website
+    </a>
 
-  <a class="button cctv" href="https://www.ameegocctv.in" target="_blank">
-    <i class="fas fa-video"></i> CCTV Solutions
-  </a>
+    <a href="https://www.ameegocctv.in" target="_blank" class="btn btn-cctv">
+      <i class="fas fa-video"></i> CCTV Solutions
+    </a>
 
-  <a class="button catalogue" href="CATALOGUE_LINK_HERE" target="_blank">
-    <i class="fas fa-file-pdf"></i> Download Catalogue
-  </a>
+    <a href="CATALOGUE_LINK_HERE" target="_blank" class="btn btn-catalogue">
+      <i class="fas fa-file-pdf"></i> Download Catalogue
+    </a>
 
-  <a class="button contact" href="ameego-contact.vcf">
-    <i class="fas fa-address-card"></i> Save Contact
-  </a>
+    <a href="ameego-contact.vcf" class="btn btn-contact">
+      <i class="fas fa-address-card"></i> Save Contact
+    </a>
 
-  <a class="button whatsapp" href="https://wa.me/919887175751?text=Hi%20AMEEGO,%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank">
-    <i class="fab fa-whatsapp"></i> Connect on WhatsApp
-  </a>
+    <a href="https://wa.me/919887175751?text=Hi%20AMEEGO,%20I%20would%20like%20to%20know%20more%20about%20your%20products."
+       target="_blank" class="btn btn-whatsapp">
+      <i class="fab fa-whatsapp"></i> Connect on WhatsApp
+    </a>
 
-  <a class="button social" href="social.html">
-    <i class="fas fa-share-alt"></i> Follow on Social Media
-  </a>
+    <a href="social.html" class="btn btn-social">
+      <i class="fas fa-share-alt"></i> Follow on Social Media
+    </a>
 
+  </div>
+
+  <!-- FOOTER -->
   <div class="footer">
-    © AMEEGO • Trusted Security Partner
+    © AMEEGO • Trusted Security & Automation Partner
   </div>
 
 </div>
