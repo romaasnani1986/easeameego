@@ -2,126 +2,196 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AMEEGO | Follow Us</title>
+<title>AMEEGO | Social Connect</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 <style>
+:root {
+  --primary: #0d6efd;
+  --secondary: #6f42c1;
+  --light: #f8f9fa;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FULL SCREEN */
+.page {
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
+/* CARD */
 .card {
   background: #ffffff;
-  width: 92%;
-  max-width: 420px;
-  border-radius: 18px;
-  padding: 25px 20px;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-
-.logo {
-  width: 120px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  margin: 10px 0 5px;
-  font-size: 24px;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.social-btn {
+  width: 100%;
+  max-width: 560px;
+  border-radius: var(--radius);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.35);
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.header img {
+  width: 130px;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  margin: 6px 0 4px;
+  font-size: 26px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* CONTENT */
+.content {
+  padding: 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 12px;
-  padding: 14px;
-  margin: 12px 0;
-  border-radius: 10px;
+}
+
+/* ICON GRID */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.icon-btn {
+  background: var(--light);
+  border-radius: 16px;
+  padding: 20px 10px;
+  text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
-.social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+.icon-btn img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
 }
 
-/* Platform Colors */
-.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }
-.facebook { background: #1877f2; }
-.youtube { background: #ff0000; }
-.linkedin { background: #0077b5; }
-.back { background: #6c757d; }
+.icon-btn span {
+  display: block;
+}
 
+.icon-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+}
+
+/* FOOTER */
 .footer {
-  margin-top: 18px;
+  text-align: center;
+  padding: 14px;
   font-size: 12px;
   color: #777;
+  background: #f1f3f5;
+}
+
+/* MOBILE */
+@media (max-width: 520px) {
+  .icon-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="page">
+  <div class="card">
 
-  <!-- LOGO -->
-  <img src="logo.png" alt="AMEEGO Logo" class="logo">
+    <!-- HEADER -->
+    <div class="header">
+      <img src="logo.jpg" alt="AMEEGO Logo">
+      <h1>Follow AMEEGO</h1>
+      <p>Connect with us on social platforms</p>
+    </div>
 
-  <h1>Follow AMEEGO</h1>
-  <div class="subtitle">Stay connected with us</div>
+    <!-- CONTENT -->
+    <div class="content">
 
-  <!-- SOCIAL LINKS -->
-  <a class="social-btn instagram" href="INSTAGRAM_MAIN_LINK" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram – AMEEGO
-  </a>
+      <!-- ICON GRID -->
+      <div class="icon-grid">
 
-  <a class="social-btn instagram" href="INSTAGRAM_CCTV_LINK" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram – AMEEGO CCTV
-  </a>
+        <a href="INSTAGRAM_MAIN_LINK" target="_blank" class="icon-btn">
+          <img src="icons/social.svg" alt="Instagram">
+          <span>Instagram</span>
+        </a>
 
-  <a class="social-btn facebook" href="FACEBOOK_MAIN_LINK" target="_blank">
-    <i class="fab fa-facebook-f"></i> Facebook – AMEEGO
-  </a>
+        <a href="INSTAGRAM_CCTV_LINK" target="_blank" class="icon-btn">
+          <img src="icons/social.svg" alt="Instagram CCTV">
+          <span>Instagram CCTV</span>
+        </a>
 
-  <a class="social-btn facebook" href="FACEBOOK_CCTV_LINK" target="_blank">
-    <i class="fab fa-facebook-f"></i> Facebook – AMEEGO CCTV
-  </a>
+        <a href="FACEBOOK_MAIN_LINK" target="_blank" class="icon-btn">
+          <img src="icons/social.svg" alt="Facebook">
+          <span>Facebook</span>
+        </a>
 
-  <a class="social-btn youtube" href="YOUTUBE_LINK" target="_blank">
-    <i class="fab fa-youtube"></i> YouTube Channel
-  </a>
+        <a href="FACEBOOK_CCTV_LINK" target="_blank" class="icon-btn">
+          <img src="icons/social.svg" alt="Facebook CCTV">
+          <span>Facebook CCTV</span>
+        </a>
 
-  <!-- BACK BUTTON -->
-  <a class="social-btn back" href="index.html">
-    <i class="fas fa-arrow-left"></i> Back to Home
-  </a>
+        <a href="YOUTUBE_LINK" target="_blank" class="icon-btn">
+          <img src="icons/social.svg" alt="YouTube">
+          <span>YouTube</span>
+        </a>
 
-  <div class="footer">
-    © AMEEGO • Security & Automation Experts
+        <a href="index.html" class="icon-btn">
+          <img src="icons/website.svg" alt="Back">
+          <span>Back</span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      © AMEEGO • Trusted Security & Automation Partner
+    </div>
+
   </div>
-
 </div>
 
 </body>
 </html>
-
