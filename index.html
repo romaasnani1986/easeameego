@@ -5,7 +5,7 @@
 <title>AMEEGO | Smart Security Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icons -->
+<!-- Font Awesome Icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -15,7 +15,7 @@
   --dark: #1c1f26;
   --light: #f8f9fa;
   --success: #25D366;
-  --radius: 16px;
+  --radius: 18px;
 }
 
 * {
@@ -28,16 +28,16 @@ body {
   background: linear-gradient(120deg, #141e30, #243b55);
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 16px;
 }
 
-/* MAIN CONTAINER */
+/* MAIN CARD */
 .wrapper {
   background: #ffffff;
   width: 100%;
-  max-width: 460px;
+  max-width: 520px;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 20px 45px rgba(0,0,0,0.3);
@@ -52,7 +52,7 @@ body {
 }
 
 .header img {
-  width: 110px;
+  width: 120px;
   margin-bottom: 10px;
 }
 
@@ -71,23 +71,57 @@ body {
 /* CONTENT */
 .content {
   padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
-/* BUTTONS */
+/* ICON GRID (1 ROW – 3 COLUMNS) */
+.icon-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.icon-btn {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 18px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.icon-btn img {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 8px;
+}
+
+.icon-btn span {
+  display: block;
+}
+
+.icon-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+}
+
+/* MAIN BUTTONS */
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 14px;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
   color: white;
+  margin-bottom: 14px;
   transition: all 0.2s ease;
 }
 
@@ -97,13 +131,9 @@ body {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
 }
 
-/* BUTTON COLORS */
-.btn-website { background: var(--primary); }
-.btn-cctv { background: var(--secondary); }
-.btn-catalogue { background: #343a40; }
 .btn-contact { background: #17a2b8; }
 .btn-whatsapp { background: var(--success); }
 .btn-social { background: #e83e8c; }
@@ -118,13 +148,9 @@ body {
 }
 
 /* RESPONSIVE */
-@media (min-width: 768px) {
-  .wrapper {
-    max-width: 520px;
-  }
-
-  .btn {
-    font-size: 17px;
+@media (max-width: 480px) {
+  .icon-row {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -144,18 +170,28 @@ body {
   <!-- CONTENT -->
   <div class="content">
 
-    <a href="https://www.ameego.in" target="_blank" class="btn btn-website">
-      <i class="fas fa-globe"></i> Visit Website
-    </a>
+    <!-- IMAGE BUTTON ROW -->
+    <div class="icon-row">
 
-    <a href="https://www.ameegocctv.in" target="_blank" class="btn btn-cctv">
-      <i class="fas fa-video"></i> CCTV Solutions
-    </a>
+      <a href="https://www.ameego.in" target="_blank" class="icon-btn">
+        <img src="icons/website.png" alt="Website">
+        <span>Website</span>
+      </a>
 
-    <a href="CATALOGUE_LINK_HERE" target="_blank" class="btn btn-catalogue">
-      <i class="fas fa-file-pdf"></i> Download Catalogue
-    </a>
+      <a href="CATALOGUE_LINK_HERE" target="_blank" class="icon-btn">
+        <img src="icons/catalogue.png" alt="Catalogue">
+        <span>Catalogue</span>
+      </a>
 
+      <a href="https://wa.me/919887175751?text=Hi%20AMEEGO,%20I%20would%20like%20to%20know%20more%20about%20your%20products."
+         target="_blank" class="icon-btn">
+        <img src="icons/whatsapp.png" alt="WhatsApp">
+        <span>WhatsApp</span>
+      </a>
+
+    </div>
+
+    <!-- NORMAL BUTTONS -->
     <a href="ameego-contact.vcf" class="btn btn-contact">
       <i class="fas fa-address-card"></i> Save Contact
     </a>
