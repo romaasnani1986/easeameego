@@ -5,55 +5,61 @@
 <title>AMEEGO | Smart Security Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Font Awesome Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 <style>
 :root {
   --primary: #0d6efd;
   --secondary: #6f42c1;
-  --dark: #1c1f26;
-  --light: #f8f9fa;
   --success: #25D366;
+  --light: #f8f9fa;
+  --dark: #1c1f26;
   --radius: 18px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
   background: linear-gradient(120deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FULL SCREEN */
+.page {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 20px;
 }
 
-/* MAIN CARD */
-.wrapper {
+/* CARD */
+.card {
   background: #ffffff;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   border-radius: var(--radius);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
 }
 
 /* HEADER */
 .header {
-  background: linear-gradient(135deg, #0d6efd, #6f42c1);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   text-align: center;
-  padding: 28px 20px;
+  padding: 32px 20px;
 }
 
 .header img {
-  width: 120px;
-  margin-bottom: 10px;
+  width: 130px;
+  margin-bottom: 12px;
 }
 
 .header h1 {
@@ -70,33 +76,36 @@ body {
 
 /* CONTENT */
 .content {
-  padding: 22px;
+  padding: 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* ICON GRID (1 ROW – 3 COLUMNS) */
-.icon-row {
+/* ICON GRID */
+.icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 18px;
 }
 
 .icon-btn {
-  background: #f8f9fa;
+  background: var(--light);
   border-radius: 16px;
-  padding: 18px 10px;
+  padding: 20px 10px;
   text-align: center;
   text-decoration: none;
   color: #212529;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.2s ease;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 .icon-btn img {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   margin-bottom: 8px;
 }
 
@@ -105,38 +114,9 @@ body {
 }
 
 .icon-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.25);
 }
-
-/* MAIN BUTTONS */
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 15px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 14px;
-  transition: all 0.2s ease;
-}
-
-.btn i {
-  font-size: 18px;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
-}
-
-.btn-contact { background: #17a2b8; }
-.btn-whatsapp { background: var(--success); }
-.btn-social { background: #e83e8c; }
 
 /* FOOTER */
 .footer {
@@ -147,9 +127,9 @@ body {
   background: #f1f3f5;
 }
 
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  .icon-row {
+/* MOBILE */
+@media (max-width: 520px) {
+  .icon-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -158,60 +138,63 @@ body {
 
 <body>
 
-<div class="wrapper">
+<div class="page">
+  <div class="card">
 
-  <!-- HEADER -->
-  <div class="header">
-    <img src="logo.jpg" alt="AMEEGO Logo">
-    <h1>AMEEGO</h1>
-    <p>Complete CCTV & Security Solutions</p>
-  </div>
+    <!-- HEADER -->
+    <div class="header">
+      <img src="logo.jpg" alt="AMEEGO Logo">
+      <h1>AMEEGO</h1>
+      <p>Complete CCTV & Security Solutions</p>
+    </div>
 
-  <!-- CONTENT -->
-  <div class="content">
+    <!-- CONTENT -->
+    <div class="content">
 
-    <!-- IMAGE BUTTON ROW -->
-    <div class="icon-row">
+      <!-- ICON GRID -->
+      <div class="icon-grid">
 
-      <a href="https://www.ameego.in" target="_blank" class="icon-btn">
-        <img src="icons/website.svg" alt="Website">
-        <span>Website</span>
-      </a>
+        <a href="https://www.ameego.in" target="_blank" class="icon-btn">
+          <img src="icons/website.svg" alt="Website">
+          <span>Website</span>
+        </a>
 
-      <a href="CATALOGUE_LINK_HERE" target="_blank" class="icon-btn">
-        <img src="icons/catalogue.svg" alt="Catalogue">
-        <span>Catalogue</span>
-      </a>
+        <a href="CATALOGUE_LINK_HERE" target="_blank" class="icon-btn">
+          <img src="icons/catalogue.svg" alt="Catalogue">
+          <span>Catalogue</span>
+        </a>
 
-      <a href="https://wa.me/919887175751?text=Hi%20AMEEGO,%20I%20would%20like%20to%20know%20more%20about%20your%20products."
-         target="_blank" class="icon-btn">
-        <img src="icons/whatsapp.svg" alt="WhatsApp">
-        <span>WhatsApp</span>
-      </a>
+        <a href="ameego-contact.vcf" class="icon-btn">
+          <img src="icons/contact.svg" alt="Save Contact">
+          <span>Save Contact</span>
+        </a>
+
+        <a href="https://wa.me/919887175751?text=Hi%20AMEEGO,%20I%20would%20like%20to%20know%20more%20about%20your%20products."
+           target="_blank" class="icon-btn">
+          <img src="icons/whatsapp.svg" alt="WhatsApp">
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="https://www.ameegocctv.in" target="_blank" class="icon-btn">
+          <img src="icons/cctv.svg" alt="CCTV">
+          <span>CCTV</span>
+        </a>
+
+        <a href="social.html" class="icon-btn">
+          <img src="icons/social.svg" alt="Social Media">
+          <span>Social Media</span>
+        </a>
+
+      </div>
 
     </div>
 
-    <!-- NORMAL BUTTONS -->
-    <a href="ameego-contact.vcf" class="btn btn-contact">
-      <i class="fas fa-address-card"></i> Save Contact
-    </a>
-
-    <a href="https://wa.me/919887175751?text=Hi%20AMEEGO,%20I%20would%20like%20to%20know%20more%20about%20your%20products."
-       target="_blank" class="btn btn-whatsapp">
-      <i class="fab fa-whatsapp"></i> Connect on WhatsApp
-    </a>
-
-    <a href="social.html" class="btn btn-social">
-      <i class="fas fa-share-alt"></i> Follow on Social Media
-    </a>
+    <!-- FOOTER -->
+    <div class="footer">
+      © AMEEGO • Trusted Security & Automation Partner
+    </div>
 
   </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    © AMEEGO • Trusted Security & Automation Partner
-  </div>
-
 </div>
 
 </body>
